@@ -1,4 +1,4 @@
-
+import "./App.css";
 import { useState, useEffect } from "react";
 
 //This function will search through the data set under the conditions given
@@ -33,22 +33,19 @@ function RandomCharacter() {
     handleAPI();
   }, []);
 
-  function handleReset() {
-    setSearchTerm("");
-    setSearchResults(data.characters || []);
-  }
+  function handleReset() {}
 
   return (
-    <div>
-      <h1>Test</h1>
+    <div id="card">
+      <div id="title">
+        <h1>Guess the character! </h1>
+        <h2>**Rick and Morty Edition**</h2>
+      </div>
       <button onClick={handleReset}>Reset</button>
-      <button onClick={handleReset}>Reset</button>
-      <h1>{character.name}</h1>
-      <img
-        src={character.image}
-        alt="rick & morty charcter"
-        className="object-cover w-full h-80 md:h-80 rounded-md mt-10"
-      />
+      <div id="character">
+        <h1>{character.name}</h1>
+        <img src={character.image} alt="rick & morty charcter" />
+      </div>
     </div>
   );
 }
