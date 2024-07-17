@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useState, useEffect } from "react";
+
+//This function will search through the data set under the conditions given
+function RandomCharacter() {
+  const [character, setCharacter] = useState("");
+
+  useEffect(() => {
+    const handleAPI = async () => {
+      try {
+        const apiUrl = `https://rickandmortyapi.com/api/character`;
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const totalCharacters = data.info.count;
+        const randomId = Math.floor(Math.random() * totalCharacters) + 1;
+        fetchCharacter(randomId);
+      } catch (error) {
+        console.error("Error fetching total characters:", error);
+      }
+    };
+
+    const fetchCharacter = async (id) => {
+      try {
+        const apiUrl = `https://rickandmortyapi.com/api/character/${id}`;
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        setCharacter(data);
+      } catch (error) {
+        console.error("Error fetching character:", error);
+      }
+    };
+
+    handleAPI();
+  }, []);
+
+  function handleReset() {
+    setSearchTerm("");
+    setSearchResults(data.characters || []);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Test</h1>
+      <button onClick={handleReset}>Reset</button>
+      <button onClick={handleReset}>Reset</button>
+      <h1>{character.name}</h1>
+      <img
+        src={character.image}
+        alt="rick & morty charcter"
+        className="object-cover w-full h-80 md:h-80 rounded-md mt-10"
+      />
+    </div>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <>
+      <RandomCharacter />
+    </>
+  );
+}
