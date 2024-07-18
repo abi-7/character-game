@@ -20,7 +20,7 @@ export default function CharacterGuess({ character, randomCharacters = [] }) {
       ) : (
         <p>Loading character...</p>
       )}
-      <h2>Who am I??</h2>
+      <h2 id="guess">Who am I??</h2>
       {randomCharacters.length > 0 && (
         <div>
           <ul>

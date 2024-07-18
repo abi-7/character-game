@@ -10,13 +10,17 @@
     align-items: center;
     text-align: center;
     margin-bottom: 20px;
+    justify-content: flex-start;
   }
 ul{
   list-style-type: none;
 }
-h2{
+#guess{
   text-align: center;
 }
 #picture{
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

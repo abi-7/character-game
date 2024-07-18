@@ -1,7 +1,6 @@
 import "./App.css";
 import RandomCharacter from "../components/handleAPI";
 import { useState } from "react";
-import CharacterGuess from "../components/characterGuess";
 
 export default function App() {
   const [newCharacter, setNewCharacter] = useState(true);
@@ -14,13 +13,15 @@ export default function App() {
 
   return (
     <>
-      <div id="card">
+      <div id="container">
         <div id="title">
           <h1>Guess the character! </h1>
           <h2>(Rick and Morty Edition)</h2>
         </div>
-        <button onClick={handleClick}>New Character!</button>
-        {newCharacter && <RandomCharacter />}
+        <div id="card">
+          <button onClick={handleClick}>New Character!</button>
+          {newCharacter && <RandomCharacter />}
+        </div>
       </div>
     </>
   );
