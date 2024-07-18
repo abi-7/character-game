@@ -11,3 +11,12 @@
     text-align: center;
     margin-bottom: 20px;
   }
+ul{
+  list-style-type: none;
+}
+h2{
+  text-align: center;
+}
+#picture{
+  align-items: center;
+}
