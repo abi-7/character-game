@@ -1,30 +1,42 @@
-#container{
-
-}
-#card {
+body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: center;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #f3f2f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 #title {
-  text-align: left;
   display: flex;
-  flex-direction: column;
-  justify-content:left;
-}
-h1{
-  margin: 0;
+  align-items: left;
+  justify-content: left;
 }
 button {
   margin-bottom: 20px;
+  margin-right: 10px;
   cursor: pointer;
   font-size: 1rem;
   padding: 15px;
   border-radius: 12px;
   font-weight: bold;
-  width:max-content;
+  width: max-content;
+}
+#characterbtn {
+  margin-top: 20px;
+}
+h2 {
+  font-style: italic;
 }
 button:hover {
   background-color: hsl(0, 1%, 77%);

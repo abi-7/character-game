@@ -1,26 +1,33 @@
 #character {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: hsl(0, 9%, 98%);
-    border-radius: 15px;
-    max-width: 500px;
-    color: black;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
-    justify-content: flex-start;
-  }
-ul{
-  list-style-type: none;
-}
-#guess{
-  text-align: center;
-}
-#picture{
-  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(0, 9%, 98%);
+  border-radius: 15px;
+  max-width: 500px;
+  color: black;
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
   justify-content: flex-start;
+}
+ul {
+  list-style-type: none;
+}
+#guess {
+  text-align: center;
+}
+#picture {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+#list {
+  display: flex;
+  flex-direction: column;
+}
+#largeDiv {
+  display: flex;
+  flex-direction: row;
 }

@@ -8,7 +8,7 @@ export default function CharacterGuess({ character, randomCharacters = [] }) {
   });
 
   return (
-    <div>
+    <div id="largeDiv">
       {character ? (
         <div id="picture">
           <img
@@ -20,10 +20,10 @@ export default function CharacterGuess({ character, randomCharacters = [] }) {
       ) : (
         <p>Loading character...</p>
       )}
-      <h2 id="guess">Who am I??</h2>
-      {randomCharacters.length > 0 && (
-        <div>
-          <ul>
+      <div>
+        <h2 id="guess">Who am I??</h2>
+        {randomCharacters.length > 0 && (
+          <ul id="list">
             {randomCharacters.map((characters) => (
               <button>
                 <li key={characters.id}>{characters.name}</li>
@@ -34,8 +34,8 @@ export default function CharacterGuess({ character, randomCharacters = [] }) {
               <li>{character.name}</li>
             </button>
           </ul>
-        </div>
-      )}
+        )}
+    </div>
     </div>
   );
 }
