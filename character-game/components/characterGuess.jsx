@@ -1,11 +1,17 @@
 import React from "react";
+import _ from "lodash";
 import "./characterGuess.css";
 
-export default function CharacterGuess({ character, randomCharacters = [] }) {
-  console.log("CharacterGuess component props:", {
-    character,
-    randomCharacters,
-  });
+export default function CharacterGuess({ character, randomCharacters }) {
+
+  console.log("character:", character);
+  
+  const combinedCharacters = [...randomCharacters, character].filter(char => char !== null);
+
+  // Shuffle the combined array
+  const shuffledCharacters = _.shuffle(combinedCharacters);
+
+  console.log("shuffledCharacters:", shuffledCharacters);
 
   return (
     <div id="largeDiv">
@@ -22,20 +28,23 @@ export default function CharacterGuess({ character, randomCharacters = [] }) {
       )}
       <div>
         <h2 id="guess">Who am I??</h2>
-        {randomCharacters.length > 0 && (
+        {shuffledCharacters.length > 0 && (
           <ul id="list">
-            {randomCharacters.map((characters) => (
-              <button>
-                <li key={characters.id}>{characters.name}</li>
-              </button>
-            ))}
+            {shuffledCharacters.map(
+              (char) =>
+                char && (
+                  <button key={char.id}>
+                    <li>{char.name}</li>
+                  </button>
+                )
+            )}
             <button>
               {" "}
               <li>{character.name}</li>
             </button>
           </ul>
         )}
-    </div>
+      </div>
     </div>
   );
 }
