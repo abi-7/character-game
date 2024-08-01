@@ -1,8 +1,8 @@
-# Character Matching Game
+# Character Guessing Game
 
 <h3>Hey there!👋</h3>
 <p>
-  This is a character matching game based on Rick & Morty characters!
+  This is a character guessing game based on Rick & Morty characters!
 </br>
   When entering the game the user is displayed with a image of a random Rick & Morty character and a list of 4 random character names from the tv series (one of these names match the character in the image displayed😆).
   </br>
