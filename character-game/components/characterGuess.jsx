@@ -1,5 +1,7 @@
 import React from "react";
 import _ from "lodash";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./characterGuess.css";
 
 export default function CharacterGuess({ character, randomCharacters }) {
@@ -18,18 +20,35 @@ export default function CharacterGuess({ character, randomCharacters }) {
 
   console.log("shuffledCharacters:", shuffledCharacters);
 
-  //todo: add prop identifier to identify
-  //if button user has clicked is the correct character name
   const handleClick= (char) => {
     if (char.isSpecial) {
-      alert(`You clicked on the special character: ${char.name}`);
+      toast.success('🤩 Wow you guessed the correct character!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     } else {
-      alert(`You clicked on: ${char.name}`);
+      toast.error('😨 Oops! Try Again!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   };
 
   return (
     <div id="largeDiv">
+      <ToastContainer />
       {character ? (
         <div id="picture">
           <img
