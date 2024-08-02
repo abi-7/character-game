@@ -31,3 +31,10 @@ ul {
   display: flex;
   flex-direction: row;
 }
+
+/*mobile breakpoints for responsiveness*/
+@media screen and (max-width: 572px){
+  #largeDiv{
+    flex-direction: column;
+  }
+}

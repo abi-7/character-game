@@ -13,15 +13,17 @@ export default function App() {
 
   return (
     <>
-      <div id="title">
-        <h1>Guess the character! </h1>
-        <h2>(Rick and Morty Edition)</h2>
-      </div>
-      <div id="container">
-        <button onClick={handleClick} id="characterbtn">
-          New Character!
-        </button>
-        <div>{newCharacter && <RandomCharacter />}</div>
+      <div className="app">
+        <div id="title">
+          <h1>Guess the Character! </h1>
+          <h2 id="subtitle">(Rick and Morty Edition)</h2>
+        </div>
+        <div id="container">
+          <button onClick={handleClick} id="characterbtn">
+            New Character!
+          </button>
+          <div>{newCharacter && <RandomCharacter />}</div>
+        </div>
       </div>
     </>
   );
